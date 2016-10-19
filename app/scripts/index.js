@@ -17,8 +17,9 @@ $(function(){
   });
 
   // Create a list of cars
-  myCars.on('add', function(models){
-    $('#car-list').append('<tr>' + '<td>'  + models.get('make') + '</td>' + '<td>'  + models.get('model') + '</td>' + '<td>'  + models.get('year') + '<td>' + '<button class="delete-btn">' + 'Delete'  + '</button>' + '</td>');
+  myCars.on('add', function(vehicle){
+    console.log(vehicle);
+    $('#car-list').append('<tr>' + '<td>'  + vehicle.get('make') + '</td>' + '<td>'  + vehicle.get('model') + '</td>' + '<td>'  + vehicle.get('year') + '<td>' + '<button class="delete-btn">' + 'Delete'  + '</button>' + '</td>');
   });
 
   //submit data from form targeting collection using create.
