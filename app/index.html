@@ -5,11 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>6 2 Loading button</title>
     <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Raleway" rel="stylesheet">
   </head>
   <body>
-    <div class="button-container">
-      <button class="submit" ><span class="btn-label">Submit</span></button>
+    <div class="container">
+      <div class="row my-cars">
+        <div class="col-xs-12 title">
+          <h1>My Car Wish List</h1>
+        </div>
+        <div class="col-xs-6 my-wish-list">
+          <h2 class="wish-header">I would like...</h2>
+          <p class="sub-header-1">There is nothing like keeping a good database of awesome cars.</p>
+          <div class="input-group">
+            <input type="text" class="form-control" id="make" placeholder="Enter Make">
+            <input type="text" class="form-control" id="model" placeholder="Enter Model">
+            <input type="text" class="form-control" id="year" placeholder="Enter Year">
+          </div>
+          <button type="button" class="btn btn-primary btn-lg btn-block" id= "submit-wish-list">Submit</button>
+        </div>
+        <div class="col-xs-6 car-list">
+          <h2 class="list-title">Current Wish List</h2>
+          <p>Get the current wish list below!</p>
+          <div class="car-list">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Make</th>
+                  <th>Model</th>
+                  <th>Year</th>
+                </tr>
+              </thead>
+              <tbody id="car-list">
+                <!-- car list goes here -->
+              </tbody>
+            </table>
+          </div>
+          <button type="button" class="btn btn-primary btn-lg btn-block" id="fetch-list">Get List</button>
+        </div>
+      </div>
     </div>
+    <!-- <div class="my-cars">
+      <div class="button-container">
+        <button class="submit" ><span class="btn-label">Submit</span></button>
+      </div>
+      <h3>Car Wish List</h3>
+      <div class="form">
+        <input type="text" class="car" placeholder="enter maker and model">
+      </div>
+      <button class="submit-wish" ><span class="car-wish-list">Submit</span></button>
+      <div class="my-cars-container">
+      </div>
+      <button class="delete-car" ><span class="delete-label">Delete</span></button>
+    </div> -->
 
     <script src="js/bundle.js"></script>
   </body>

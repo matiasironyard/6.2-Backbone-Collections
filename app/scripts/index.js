@@ -1,50 +1,33 @@
-var models = require('./models/mycars');
 var $ = require('jquery');
 var _ = require('underscore');
+var models = require('./models/myCars');
 
 
-var mycars = new models.MyCarCollection();
+$(function(){
+  var myCars = new models.MyCarCollection();
+  console.log(myCars);
 
-
-$('.submit').on('click',function(){
-  $('.btn-label').html('Loading...').prop('disabled', true);
-  mycars.fetch().then(function(){
-    $('.btn-label').html('Submit').prop('disabled', false);
+  // use submit button to fetch
+  $('#fetch-list').on('click',function(event){
+    event.preventDefault();
+    $('#fetch-list').html('Loading List...').prop('disabled', true);
+    myCars.fetch().then(function(){
+      $('#fetch-list').html('Get List').prop('disabled', false);
+    });
   });
-console.log(mycars);
-});
 
+  // Create a list of cars
+  myCars.on('add', function(models){
+    $('#car-list').append('<tr>' + '<td>'  + models.get('make') + '</td>' + '<td>'  + models.get('model') + '</td>' + '<td>'  + models.get('year') + '<td>' + '<button class="delete-btn">' + 'Delete'  + '</button>' + '</td>');
+  });
 
-
-
-
-
-
-
-
-
-
-
-// var data = {'car 1':'Honda Accord','car 2':'Mazda CX-5', 'car 3': 'Ford Focus', 'car 4': 'Mitsubishi Diamante'};
-//  $.ajax({
-//    url: 'http://tiny-lasagna-server.herokuapp.com/collections/mycars',
-//    type: 'POST',
-//    contentType:'application/json',
-//    data: JSON.stringify(data),
-//    dataType:'json',
-//    success: function(data){
-//      //On ajax success do this
-//      alert(data);
-//       },
-//    error: function(xhr, ajaxOptions, thrownError) {
-//       //On error do this
-//         if (xhr.status == 200) {
-//
-//             alert(ajaxOptions);
-//         }
-//         else {
-//             alert(xhr.status);
-//             alert(thrownError);
-//         }
-//     }
-//  });
+  //submit data from form targeting collection using create.
+  $('#submit-wish-list').on('click', function(event){
+      event.preventDefault();
+      myCars.create({ 'make': $('#make').val(), 'model': $('#model').val(), 'year': $('#year').val() });
+      $('#make').val('');
+      $('#model').val('');
+      $('#year').val('');
+      console.log();
+    });
+  }($));

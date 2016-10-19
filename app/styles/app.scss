@@ -16,7 +16,59 @@ img {
   max-width: 100%;
 }
 
-.submit{
-  height: 100px;
-  width: 200px;
+body {
+  background: radial-gradient(circle, #282828, #000000);
+  background-image: url("http://wallpapercave.com/wp/1iGOB2z.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container{
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.title{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h1{
+  font-family: 'Bungee Inline', cursive;
+  color: #ffffff;
+  font-size: 50px;
+}
+
+h2{
+  font-family: 'Raleway', sans-serif;
+  color: #999999;
+  text-transform: uppercase;
+}
+
+p{
+  font-size: 15px;
+  color: #999999;
+}
+.car-list{
+  border-left: 2px solid #999999;
+}
+
+.form-control{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  filter: opacity(.7);
+}
+
+.btn{
+  margin-top: 20px;
+  background: radial-gradient(circle, #282828, #000000);
+}
+
+.table{
+  color: #ffffff;
+  .delete-btn{
+    background-color: #282828;
+    color: #ffffff;
+  }
 }
